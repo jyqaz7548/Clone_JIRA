@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -5,10 +6,17 @@ interface AuthLayoutProps {
 
 const AuthLayout = ({ children }: AuthLayoutProps) => {
   return (
-    <div>
-      <Image src="/logo.svg" height={50} width={100} alt="Logo" />
-      {children}
-    </div>
+    <main className=" bg-neutral-200 min-h-screen">
+      <div className=" mx-auto max-w-screen-2xl p-4">
+        <nav className=" flex justify-between items-center">
+          <Image src="/logo.svg" alt="logo" width={152} height={56} />
+          <Button variant="secondary">Sign UP</Button>
+        </nav>
+        <div className="flex flex-col items-center justify-center pt-4 md:pt-14">
+          {children}
+        </div>
+      </div>
+    </main>
   );
 };
 

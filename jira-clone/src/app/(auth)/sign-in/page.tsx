@@ -1,5 +1,7 @@
+import { SignInCard } from "@/features/auth/components/sign-in-card";
+
 const SignInpage = () => {
-  return <div>Sign in page</div>;
+  return <SignInCard />;
 };
 
 export default SignInpage;
