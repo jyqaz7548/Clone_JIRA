@@ -19,8 +19,8 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
         <nav className=" flex justify-between items-center">
           <Image src="/logo.svg" alt="logo" width={152} height={56} />
           <Button asChild variant="secondary">
-            <Link href={pathname === "/sign-in" ? "/sign-up" : "/sign-in"}>
-              {pathname === "/sign-in" ? "Sign Up" : "Login"}
+            <Link href={isSignIn ? "/sign-up" : "/sign-in"}>
+              {isSignIn ? "Sign Up" : "Login"}
             </Link>
           </Button>
         </nav>

@@ -40,6 +40,8 @@ export const SignUpCard = () => {
   });
 
   const onSubmit = (values: z.infer<typeof registerSchema>) => {
+    console.log("first");
+
     mutate({ json: values });
   };
   return (
