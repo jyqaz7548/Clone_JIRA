@@ -1,5 +1,5 @@
 import { client } from "@/lib/rpc";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query"; //useMutation = POST 요청
 import { InferRequestType, InferResponseType } from "hono";
 
 type ResponseType = InferResponseType<(typeof client.api.auth.login)["$post"]>;
@@ -15,3 +15,5 @@ export const useLogin = () => {
 
   return mutation;
 };
+
+//로그인 시키는 기능

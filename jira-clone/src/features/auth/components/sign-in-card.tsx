@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "zod"; //타입을 정확하게 지정할수 있게하는애임
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
@@ -123,3 +123,5 @@ export const SignInCard = () => {
     </Card>
   );
 };
+
+//UI 모으기

@@ -33,10 +33,10 @@ export const sessionMiddleware = createMiddleware<AdditionalContext>(
       .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
       .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!);
 
-    const session = getCookie(c, AUTH_COOKIE);
+    const session = getCookie(c, AUTH_COOKIE); //AUTH_COOKIE 에 로그인정보가 담겨져있음
 
     if (!session) {
-      return c.json({ error: "Unauthorized" }, 401);
+      return c.json({ error: "Unauthorized" }, 401); //로그인 정보가 없으면 에러로 리턴
     }
     client.setSession(session);
 

@@ -10,7 +10,7 @@ interface AuthLayoutProps {
 }
 
 const AuthLayout = ({ children }: AuthLayoutProps) => {
-  const pathname = usePathname();
+  const pathname = usePathname(); //사이트 주소 '/'뒤에있는 주소 불러오기
   const isSignIn = pathname === "/sign-in";
 
   return (

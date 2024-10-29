@@ -10,3 +10,5 @@ export const registerSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8, "Minimum of 8 characters required"),
 });
+
+//이 파일은 타입 지정해주는 파일

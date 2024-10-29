@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query"; // 값을 가져오는것
 
 import { client } from "@/lib/rpc";
 
@@ -20,3 +20,5 @@ export const useCurrent = () => {
 
   return query;
 };
+
+//current는 유저 정보를 불러오는 기능임
