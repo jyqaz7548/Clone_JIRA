@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { useLogout } from "@/features/auth/api/use-logout";
 import { useCurrent } from "@/features/auth/api/use-current";
-import { Button } from "@/components/ui/button";
+import { UserButton } from "@/features/auth/components/user-button";
 
 export default function Home() {
   const router = useRouter(); //화면 이동할때 쓰는 함수 ,useclinet의 유무에 따라 사용법이 바뀜
@@ -21,8 +21,7 @@ export default function Home() {
   //useEffect는 클라이언트가 렌더링이 다 되면 작동됨,사이트가 두번 로딩 1.div안에 있는거(서버렌더링) 2.기능렌더링(클라이언트 렌더링)
   return (
     <div>
-      Only visible to authorized users.
-      <Button onClick={() => mutate()}>Logout</Button>
+      <UserButton />
     </div>
   );
 }
