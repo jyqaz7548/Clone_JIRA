@@ -1,3 +1,5 @@
+"use client";
+
 import { z } from "zod"; //타입을 정확하게 지정할수 있게하는애임
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
