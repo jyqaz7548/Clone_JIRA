@@ -3,6 +3,7 @@
 import { cookies } from "next/headers";
 import { Account, Client } from "node-appwrite";
 import { AUTH_COOKIE } from "./constants";
+import { redirect } from "next/dist/server/api-utils";
 
 export const getCurrent = async () => {
   try {
