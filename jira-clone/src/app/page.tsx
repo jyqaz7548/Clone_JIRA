@@ -1,9 +1,11 @@
 "use client";
-import { useCurrent } from "@/features/auth/api/use-current";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 import { useLogout } from "@/features/auth/api/use-logout";
-import { useRouter } from "next/router";
-import { useEffect, useReducer } from "react";
-import { Button } from "react-day-picker";
+import { useCurrent } from "@/features/auth/api/use-current";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const router = useRouter();
@@ -17,7 +19,7 @@ export default function Home() {
   }, [data]);
 
   return (
-    <div className="">
+    <div>
       Only visible to authorized users.
       <Button onClick={() => mutate()}>Logout</Button>
     </div>
