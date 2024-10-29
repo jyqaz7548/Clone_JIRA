@@ -1,7 +1,7 @@
 "use client";
 
-import { Loader } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { Loader, LogOut } from "lucide-react";
+import { Avatar, AvatarFallback } from "@radix-ui/react-avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +14,7 @@ import { useLogout } from "../api/use-logout";
 import { useCurrent } from "../api/use-current";
 
 export const UserButton = () => {
+  const { mutate: logout } = useLogout();
   const { data: user, isLoading } = useCurrent();
 
   if (isLoading) {
@@ -38,7 +39,7 @@ export const UserButton = () => {
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger className="outline-none relative">
         <Avatar className="size-10 hover:opacity-75 transition border border-neutral-300">
-          <AvatarFallback className="bg-neutral-200 font-medium text-neutral-500 flex items-center justify-center">
+          <AvatarFallback className="bg-neutral-200 text-xl font-medium text-neutral-500 flex items-center justify-center">
             {avatarFallback}
           </AvatarFallback>
         </Avatar>
@@ -59,9 +60,17 @@ export const UserButton = () => {
             <p className="text-sm font-medium text-neutral-900">
               {name || "User"}
             </p>
-            <p>{email}</p>
+            <p className="text-xs text-neutral-500">{email}</p>
           </div>
         </div>
+        <DottedSeparator className="mb-1" />
+        <DropdownMenuItem
+          onClick={() => logout()}
+          className="h-10 flex items-center justify-center text-amber-700 font-medium cursor-pointer"
+        >
+          <LogOut className="size-4 mr-2 " />
+          Log out
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
