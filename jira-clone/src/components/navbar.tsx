@@ -1,3 +1,6 @@
+import { UserButton } from "@/features/auth/components/user-button";
+import { MoblieSidebar } from "./mobile-sidebar";
+
 export const Navbar = () => {
   return (
     <nav className="pt-4 px-6 flex items-center justify-between">
@@ -7,6 +10,8 @@ export const Navbar = () => {
           Monitor all of your projects and tasks here
         </p>
       </div>
+      <MoblieSidebar />
+      <UserButton />
     </nav>
   );
 };
