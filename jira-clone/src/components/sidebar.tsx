@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import { DottedSeparator } from "./dotted-separator";
 import { Navigation } from "./Navigation";
 
