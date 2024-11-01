@@ -6,5 +6,5 @@ export default async function Home() {
 
   if (!user) redirect("/sign-in");
 
-  return <div>This is a home page</div>;
+  return <div>This is a home page 홈페이지</div>;
 }
